@@ -1,5 +1,3 @@
-import { PORT } from './config';
-
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
@@ -29,4 +27,4 @@ app.use('/', indexRouter);
 
 
 //Activando el servidor desde express
-app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+app.listen(3000, () => console.log(`Servidor corriendo en el puerto 3000`));
