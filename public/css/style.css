@@ -5,16 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
-    cursor: url('../img/cursor2.svg'), auto;
-}
-
-.cursor {
-    cursor: url('../img/cursor.svg'), auto;
-    border-radius: 5px;
-}
-
-.cursor:hover {
-    background-color: #5cad4a;
 }
 
 .navbar-custom {
@@ -39,27 +29,27 @@
     animation: pepi 1s ease;
 }
 
+.form {
+    width: 40%;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-around;
+}
 
 .search {
-    border-radius: 7px;
-    margin-left: 10px;
-    padding: 5px;
-    width: 200px;
+    width: 100%;
+    background-color: #cacaca;
     border: none;
-    background: #cacaca;
+    padding: 5px;
+    border-radius: 5px 0px 0px 5px;
 }
 
 
-.boton-buscar{
-    height: 30px;
-    width: 30px;
-    position: relative;
-    top: 0px;
-    right: 37px;
+.boton-buscar {
     background: #cacaca;
     border: none;
-    border-radius: 7px;
-    cursor: pointer;
+    padding: 5px;
+    border-radius: 0px 5px 5px 0px ;
 }
 
 .boton-buscar:hover {
@@ -77,9 +67,10 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 500px;
+    height: 300px;
     background: url('/img/portal.jpg');
     background-size: cover;
+    background-position: center;
 }
 
 .title img {
@@ -105,16 +96,16 @@ main {
     padding: 10px;
     transition: all 0.3s;
     text-decoration: none;
-    color: #cacaca;
-    cursor: url('../img/cursor.svg'), auto;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .all-characters a:hover {
     background: #417934;
-    color: #cacaca;
+    color: #ffffff;
 }
 
-.resultados{
+.resultados {
     display: block;
     color: #cacaca;
     width: 90%;
@@ -126,11 +117,15 @@ main {
     border-bottom: 1px solid #cacaca;
 }
 
-
+.list {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
 
 .contenedor-info {
-    width: 100%;
+    width: 85%;
     height: 300px;
+    max-width: 270px;
     background-color: rgb(31, 31, 31);
     display: flex;
     flex-wrap: nowrap;
@@ -139,10 +134,9 @@ main {
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    border: 2px solid rgb(37, 37, 37);
     transition: all 0.3s;
     margin-bottom: 10px;
-    cursor: url('../img/cursor.svg'), auto;
+    cursor: pointer;
 }
 
 .contenedor {
@@ -150,16 +144,15 @@ main {
 }
 
 .contenedor-info:hover {
-    background: white;
-    border: 2px solid black;
+    background: #ffffff;
 }
 
-.contenedor-info:hover .nombre {
+.contenedor-info:hover .nombre, .contenedor-info:hover .estado {
     color: black;
 }
 
 .contenedor-info:hover img {
-    border: 1px double black;
+    border: 2px solid black;
 }
 
 .contenedor-info img {
@@ -168,10 +161,10 @@ main {
     height: 170px;
     margin-top: 10px;
     padding: 10px;
-    border: 1px double #5cad4a;
+    border: 2px solid #5cad4a;
     border-radius: 100%;
     background-size: cover;
-    cursor: url('../img/cursor.svg'), auto;
+    cursor: pointer;
 }
 
 
@@ -180,14 +173,12 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    cursor: url('../img/cursor.svg'), auto;
 }
 
 .nombre,
 .estado {
     text-align: center;
     color: #cacaca;
-    cursor: url('../img/cursor.svg'), auto;
 }
 
 .nombre {
@@ -221,7 +212,7 @@ main {
 
 .buttons {
     background-size: cover;
-    width: 20%;
+    width: 100%;
     margin: 0 auto;
     border-radius: 5px;
     border: none;
@@ -230,9 +221,10 @@ main {
     justify-content: space-around;
 }
 
-.buttons a{
+.buttons a {
     background: #cacaca;
     transition: all 0.3s;
+    margin: 10px;
 }
 
 .buttons a:hover {
@@ -307,18 +299,13 @@ footer div a i {
 @media (min-width: 361px) {
 
     .list {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
     }
 
     .contenedor-info {
-        width: 43%;
+        width: 85%;
         height: 300px;
-    }
-
-    .contenedor-info img {
-        width: 150px;
-        height: 150px;
     }
 
     .contenedor {
@@ -326,8 +313,37 @@ footer div a i {
     }
 }
 
+@media (min-width:576px){
+    .list {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
 @media (min-width:768px) {
     .contenedor-info {
-        width: 18%;
+        width: 85%;
+    }
+
+    .list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .title {
+        height: 400px;
+    }
+}
+
+@media (min-width:992px){
+    .list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width:1200px){
+    .list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .title {
+        height: 500px;
     }
 }
